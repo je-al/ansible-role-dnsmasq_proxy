@@ -1,6 +1,7 @@
-# dnsmasq\_proxy
+dnsmasq\_proxy
+==============
 
-A shared role for Ansible intended to provide painless setup of an internal
+This Ansible role is meant to provide painless setup of an internal
 network DNS server that also acts as a proxy/cache for worldwide DNS lookups.
 
 This is a very early release. At the moment, all it does is ensure that the
@@ -8,12 +9,34 @@ This is a very early release. At the moment, all it does is ensure that the
 package management.  In practical terms, that means it should be compatible
 with all RedHat-class and SmartOS (Joyent) systems.
 
-## Usage
+Requirements
+------------
 
-Include something like what's below in your playbook.  (I think this is right;
-I'm still an Ansible rookie.)
+See above
 
-```yaml
-- roles:
-  - { role: "https://github.com/L2G/ansible-role-dnsmasq_proxy,,dnsmasq_proxy" }
-```
+Role Variables
+--------------
+
+None
+
+Dependencies
+------------
+
+None
+
+Example Playbook
+----------------
+
+    - hosts: internal\_dns\_servers
+      roles:
+         - { role: L2G.dnsmasq_proxy }
+
+License
+-------
+
+Creative Commons Attribution 4.0 International (http://creativecommons.org/licenses/by/4.0/)
+
+Author Information
+------------------
+
+Larry "Lawrence Leonard" Gilbert, larry@L2G.to, https://github.com/L2G, 844-L2G-GEEK
