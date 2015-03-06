@@ -56,7 +56,7 @@ address=/{{ fqdn }}/{{ address }}
 {% endfor %}
 {% endif %}
 
-# This logs all DNS queries coming through dnsmasq, for debugging %}
+# This logs all DNS queries coming through dnsmasq, for debugging
 {% if not dnsmasq_log_queries %}#{% endif %}log-queries
 
 # This logs lots of extra information about DHCP transactions, for debugging 
