@@ -1,0 +1,16 @@
+---
+- name: dnsmasq configuration (/etc/dnsmasq.conf)
+  template: >
+    dest=/etc/dnsmasq.conf
+    src=dnsmasq.conf.j2
+    backup=yes
+    validate="dnsmasq --test -C %s"
+  when: ansible_distribution != 'SmartOS'
+
+- name: dnsmasq configuration (/opt/local/etc/dnsmasq.conf)
+  template: >
+    dest=/opt/local/etc/dnsmasq.conf
+    src=dnsmasq.conf.j2
+    backup=yes
+    validate="dnsmasq --test -C %s"
+  when: ansible_distribution == 'SmartOS'
