@@ -1,2 +1,3 @@
 ---
-# handlers file for dnsmasq_proxy
+- name: reload configuration
+  service: name=dnsmasq state=reloaded
