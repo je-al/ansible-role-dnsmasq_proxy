@@ -7,5 +7,9 @@
   when: ansible_pkg_mgr == 'pkgin'
   pkgin: name=dnsmasq
 
+- name: dnsmasq installed via APT
+  when: ansible_pkg_mgr == 'apt'
+  apt: name=dnsmasq
+
 - name: dnsmasq service enabled
   service: name=dnsmasq enabled=yes
