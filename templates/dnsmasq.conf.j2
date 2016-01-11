@@ -16,12 +16,12 @@
 {% if not dnsmasq_no_resolv %}#{% endif %}no-resolv
 
 # This disables DHCP and TFTP completely (empty value is intentional)
-{% if not dnsmasq_no_dhcp %}#{% endif %}no-dhcp-interface=
+{% if not dnsmasq_no_dhcp %}#{% endif %}no-dhcp-interface={{ dnsmasq_no_dhcp }}
 
 # This prevents dnsmasq from reading /etc/hosts.
 {% if not dnsmasq_no_hosts %}#{% endif %}no-hosts
 # This specifies a file to read besides /etc/hosts.
-{% if not dnsmasq_addn_hosts %}#{% endif %}addn-hosts={{ dnsmasq_addn_hosts }}
+{% if not dnsmasq_addn_hosts %}#{% endif %}addn-hosts=/usr/local/etc/{{ dnsmasq_addn_hosts }}
 
 # This automatically adds the value of "domain" to simple, non-dotted,
 # non-qualified names in a hosts file.

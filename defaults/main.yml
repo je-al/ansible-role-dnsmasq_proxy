@@ -3,6 +3,8 @@ dnsmasq_port: 53
 
 # Optional variables
 dnsmasq_addn_hosts: null
+dnsmasq_addn_hosts_entries:
+  - { ip: 127.0.0.1, host: localhost }
 dnsmasq_addresses: null
 dnsmasq_bogus_nxdomain: null
 dnsmasq_bogus_priv: null

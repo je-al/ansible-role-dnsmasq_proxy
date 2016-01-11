@@ -16,3 +16,11 @@
     validate="dnsmasq --test -C %s"
   notify: restart dnsmasq
   when: ansible_distribution == 'SmartOS'
+
+- name: configure additional hosts
+  template:
+    src: addn_hosts.conf.j2
+    dest: /usr/local/etc/{{ dnsmasq_addn_hosts }}
+    backup: yes
+  notify: restart dnsmasq
+  when: dnsmasq_addn_hosts | default(None) != None
